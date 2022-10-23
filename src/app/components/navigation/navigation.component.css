@@ -6,9 +6,8 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  margin-left: 0;
   height: 60px;
-  background-color: #a285c3;
+  background-color: #665ab5;
   position: fixed;
   z-index: 1;
 }
@@ -40,6 +39,7 @@ header label {
 
 .logo ul:hover {
   cursor: pointer;
+  border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -47,24 +47,25 @@ header label {
   display: inline-block;
   transition: all 0.5s linear;
   margin: 0;
-  padding: 0;
+  padding: 5px;
 }
 
 .menu ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  padding-right: 5px;
   display: flex;
 }
 
 .menu li {
-  display: inline-block;
+  display: flex;
   transition: all 0.5s linear;
+  text-align: center;
 }
 
 .menu li:hover {
   cursor: pointer;
+  border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -80,6 +81,7 @@ header label {
 h1 {
   margin-top: 100px;
 }
+
 @media only screen and (max-width: 1024px) {
   header {
     height: fit-content;
@@ -100,6 +102,7 @@ h1 {
 
   .menu li a {
     font-size: 10px;
+    margin: auto;
   }
 }
 @media only screen and (max-width: 640px) {

@@ -1,1 +1,42 @@
-<p>register works!</p>
+<div class="register">
+    <form action="" class="formulario">
+        <h1>Registro</h1>
+        <div class="form-nombre">
+            <div class="etiqueta">
+                <label>Nombre():</label>
+            </div>
+            <input formControlName="username" type="email" class="email" placeholder="nombre">
+        </div>
+        <div class="form-apellido">
+            <div class="etiqueta-apellido">
+                <label>Apellido:</label>
+            </div>
+            <input formControlName="surname" type="email" class="email" placeholder="apellido">
+        </div>
+        <div class="form-email">
+            <div class="etiqueta-email">
+                <label>Email:</label>
+            </div>
+            <input formControlName="email" type="email" class="email" placeholder="email">
+        </div>
+        <div class="form-password">
+            <div class="etiqueta-pass">
+                <label>Password:</label>
+            </div>
+            <input formControlName="password" type="password" class="password" placeholder="contraseña..."
+                (toggle)="true">
+        </div>
+        <div class="form-confirmPassword">
+            <div class="etiqueta-confirmPass">
+                <label>Confirmar password:</label>
+            </div>
+            <input formControlName="confirmPassword" type="password" class="password"
+                placeholder="confirmar contraseña..." (toggle)="true">
+        </div>
+        <div class="botones">
+            <button class="submit" type="submit">Registrar</button>
+            <button class="submit" routerLink="/login">Iniciar sesión</button>
+        </div>
+
+    </form>
+</div>

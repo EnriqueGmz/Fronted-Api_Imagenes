@@ -6,14 +6,15 @@
             <div class="etiqueta">
                 <label>Email:</label>
             </div>
-            <input formControlName="email" type="email" class="email" placeholder="name@example.com">
+            <input formControlName="email" type="email" class="email" placeholder="mail@adress.com">
         </div>
 
         <div class="form-password">
             <div class="etiqueta-pass">
-                <label>Password:</label>
+                <label>Contraseña:</label>
             </div>
-            <input formControlName="password" type="password" class="password" placeholder="password">
+            <input formControlName="password" type="password" class="password" placeholder="contraseña..."
+                (toggle)="true">
         </div>
         <button class="submit" type="submit">Enviar</button>
     </form>
