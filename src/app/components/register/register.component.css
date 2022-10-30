@@ -7,7 +7,8 @@
   width: 25%;
   margin: 90px auto;
   border-radius: 5px;
-  background-color: #bdb3f8;
+  background-color: #dbd6f2;
+  box-shadow: 13px 13px 20px #a89fd5, -13px -13px 20px #ffffff;
 }
 
 .register h1 {
@@ -143,7 +144,7 @@
 }
 button {
   margin: auto;
-  width: 35%;
+  width: 25%;
   height: 20px;
   align-items: center;
   background-color: #665ab5;
@@ -155,6 +156,10 @@ button {
   cursor: pointer;
   margin-top: 6px;
 }
+button[type]:focus {
+  box-shadow: 0 1px 1px rgba(63, 28, 81, 0.472) inset,
+    0 0 8px rgba(82, 30, 124, 0.483);
+}
 
 input[type]:focus {
   box-shadow: 0 1px 1px rgba(97, 38, 127, 0.472) inset,
@@ -164,4 +169,12 @@ input[type]:focus {
 ::placeholder {
   color: #59518d;
   font-size: 9px;
+}
+
+div .invalid-feedback {
+  display: block;
+  font-size: 8px;
+  color: rgb(223, 69, 61);
+  text-align: left;
+  margin-left: 12px;
 }

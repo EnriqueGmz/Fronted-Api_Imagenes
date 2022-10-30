@@ -1,42 +1,42 @@
 <div class="register">
-    <form action="" class="formulario">
+    <form class="formulario" [formGroup]="registerForm" (ngSubmit)="submit()">
         <h1>Registro</h1>
         <div class="form-nombre">
             <div class="etiqueta">
-                <label>Nombre():</label>
+                <label>Nombre</label>
             </div>
-            <input formControlName="username" type="email" class="email" placeholder="nombre">
+            <input type="text" formControlName="username" class="username" placeholder="nombre">
         </div>
         <div class="form-apellido">
             <div class="etiqueta-apellido">
-                <label>Apellido:</label>
+                <label>Apellido</label>
             </div>
-            <input formControlName="surname" type="email" class="email" placeholder="apellido">
+            <input type="text" formControlName="surname" class="surname" placeholder="apellido">
         </div>
         <div class="form-email">
             <div class="etiqueta-email">
-                <label>Email:</label>
+                <label>Email</label>
             </div>
-            <input formControlName="email" type="email" class="email" placeholder="email">
+            <input type="text" formControlName="email" class="email" placeholder="email">
         </div>
         <div class="form-password">
             <div class="etiqueta-pass">
-                <label>Password:</label>
+                <label>Contraseña</label>
             </div>
-            <input formControlName="password" type="password" class="password" placeholder="contraseña..."
-                (toggle)="true">
+            <input type="text" formControlName="password" class="password" placeholder="Contraseña...">
         </div>
         <div class="form-confirmPassword">
             <div class="etiqueta-confirmPass">
-                <label>Confirmar password:</label>
+                <label>Confirmar contraseña</label>
             </div>
-            <input formControlName="confirmPassword" type="password" class="password"
-                placeholder="confirmar contraseña..." (toggle)="true">
+            <input type="text" formControlName="confirmPassword" class="password" placeholder="confirmar contraseña...">
         </div>
         <div class="botones">
-            <button class="submit" type="submit">Registrar</button>
-            <button class="submit" routerLink="/login">Iniciar sesión</button>
+            <button type="submit" class="submit">Register</button>
+            <button type="button" (click)="onReset()" class="btn btn-warning float-right">
+                Reset
+            </button>
+            <button type="submit" class="submit" routerLink="/login">Login</button>
         </div>
-
     </form>
 </div>
