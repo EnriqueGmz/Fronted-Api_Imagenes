@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {
   AbstractControl,
@@ -9,7 +8,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
-import Validation from './validator';
+import Validation from 'src/app/utils/validation';
 
 @Component({
   selector: 'app-register',
@@ -82,6 +81,7 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/login']);
       });
     }
+    // console.log(JSON.stringify(this.registerForm.value, null, 2));
   }
 
   onReset(): void {
