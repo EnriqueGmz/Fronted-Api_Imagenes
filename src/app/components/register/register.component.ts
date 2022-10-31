@@ -1,5 +1,14 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 import Validation from './validator';
 
 @Component({
@@ -8,12 +17,22 @@ import Validation from './validator';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  registerForm!: FormGroup;
+  registerForm: FormGroup = new FormGroup({
+    username: new FormControl(''),
+    surname: new FormControl(''),
+    email: new FormControl(''),
+    password: new FormControl(''),
+    confirmPassword: new FormControl(''),
+  });
   emailpattern: any =
     /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private userService: UserService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group(
@@ -40,18 +59,29 @@ export class RegisterComponent implements OnInit {
     );
   }
 
-  get f() {
+  get f(): { [key: string]: AbstractControl } {
     return this.registerForm.controls;
   }
 
-  submit(): void {
+  submit() {
     this.submitted = true;
 
     if (this.registerForm.invalid) {
       return;
     }
 
-    // console.log(JSON.stringify(this.form.value, null, 2));
+    if (this.registerForm.valid) {
+      const body = {
+        username: this.registerForm.get('username')?.value,
+        surname: this.registerForm.get('surname')?.value,
+        email: this.registerForm.get('email')?.value,
+        password: this.registerForm.get('password')?.value,
+        confirmPassword: this.registerForm.get('confirmPassword')?.value,
+      };
+      this.userService.register(JSON.stringify(body)).subscribe(() => {
+        this.router.navigate(['/login']);
+      });
+    }
   }
 
   onReset(): void {

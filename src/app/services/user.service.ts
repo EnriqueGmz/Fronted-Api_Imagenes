@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
   providedIn: 'root',
 })
-export class UserServicesService {
-  private URI: string = 'http://localhost:4000api/v1/auth';
+export class UserService {
+  private URI: string = 'http://localhost:4000/api/v1/auth';
 
   constructor(private http: HttpClient) {}
 

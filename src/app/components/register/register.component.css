@@ -142,6 +142,7 @@
 .botones {
   display: flex;
 }
+
 button {
   margin: auto;
   width: 25%;
@@ -156,6 +157,7 @@ button {
   cursor: pointer;
   margin-top: 6px;
 }
+
 button[type]:focus {
   box-shadow: 0 1px 1px rgba(63, 28, 81, 0.472) inset,
     0 0 8px rgba(82, 30, 124, 0.483);
